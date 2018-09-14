@@ -36,7 +36,7 @@ webpack.server.config.js     * Webpack 的服务端配置<br>
 2：修改 app.module.ts 文件中 imports 为<br>
 imports: [BrowserModule.withServerTransition({ appId: "tour-of-heroes" })]<br>
 appId 值它可以是任何字符串<br>
-3:在软件的所有 http 服务中注入 APP_BASE_HREF 令牌来提供服务器的源地址（origin），把它注入到服务中，并把这个源地址添加到所请求的 URL 之前（看 src\app\app.server.module.ts）
+3：在软件的所有 http 服务中注入 APP_BASE_HREF 令牌来提供服务器的源地址（origin），把它注入到服务中，并把这个源地址添加到所请求的 URL 之前（看 src\app\app.server.module.ts）
 <br>
 4：在 src/app/ 目录下创建 app.server.module.ts 文件
 <br>
