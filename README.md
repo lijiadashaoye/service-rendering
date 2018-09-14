@@ -33,7 +33,7 @@ webpack.server.config.js     * Webpack 的服务端配置<br>
 ## 方法
 
 1：npm install --save @angular/platform-server @nguniversal/module-map-ngfactory-loader ts-loader @nguniversal/express-engine<br>
-2:修改 app.module.ts 文件中 imports 为<br>
+2：修改 app.module.ts 文件中 imports 为<br>
 imports: [BrowserModule.withServerTransition({ appId: "tour-of-heroes" })]<br>
 appId 值它可以是任何字符串<br>
 3:在软件的所有 http 服务中注入 APP_BASE_HREF 令牌来提供服务器的源地址（origin），把它注入到服务中，并把这个源地址添加到所请求的 URL 之前（看 src\app\app.server.module.ts）
@@ -54,6 +54,6 @@ appId 值它可以是任何字符串<br>
 <br>
 11：打包：npm run build:ssr
 <br>
-12:用 vscode 打开打包后的文件夹 dist，然后终端输入：npm run serve:ssr
+12：用 vscode 打开打包后的文件夹 dist，然后终端输入：npm run serve:ssr
 <br>
 13：浏览器打开：http://localhost:4000 即可
