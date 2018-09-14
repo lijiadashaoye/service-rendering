@@ -44,7 +44,7 @@ appId 值它可以是任何字符串<br>
 <br>
 6：在根目录下创建 server.ts 文件（与 angular.json 同级）
 <br>
-7：在项目的根目录下创建一个 tsconfig.server.json 文件（src\tsconfig.server.json）来配置 TypeScript 和这个 Universal 应用的 AOT 编译选项。
+7：在项目的根目录下创建一个 tsconfig.server.json 文件（src\tsconfig.server.json）来配置 TypeScript 和这个应用的 AOT 编译选项。
 <br>
 8：在项目的根目录下创建一个 webpack.server.config.js 文件（与 angular.json 同级）
 <br>
