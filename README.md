@@ -28,3 +28,32 @@ tsconfig.json                TypeScript 的客户端配置<br>
 package.json                 npm 配置<br>
 webpack.server.config.js     * Webpack 的服务端配置<br>
 
+<br>
+
+## 方法
+
+1：npm install --save @angular/platform-server @nguniversal/module-map-ngfactory-loader ts-loader @nguniversal/express-engine<br>
+2:修改 app.module.ts 文件中 imports 为<br>
+imports: [BrowserModule.withServerTransition({ appId: "tour-of-heroes" })]<br>
+appId 值它可以是任何字符串<br>
+3:在软件的所有 http 服务中注入 APP_BASE_HREF 令牌来提供服务器的源地址（origin），把它注入到服务中，并把这个源地址添加到所请求的 URL 之前（看 src\app\app.server.module.ts）
+<br>
+4：在 src/app/ 目录下创建 app.server.module.ts 文件
+<br>
+5：在 src/ 目录下创建一个 main.server.ts 文件（src\main.server.ts），并导出 AppServerModule
+<br>
+6：在根目录下创建 server.ts 文件（与 angular.json 同级）
+<br>
+7：在项目的根目录下创建一个 tsconfig.server.json 文件（src\tsconfig.server.json）来配置 TypeScript 和这个 Universal 应用的 AOT 编译选项。
+<br>
+8：在项目的根目录下创建一个 webpack.server.config.js 文件（与 angular.json 同级）
+<br>
+9：在 angular.json 的 architect 下添加服务配置：architect -> server{}
+<br>
+10：在 package.json 中添加打包、启动命令：scripts -> build:ssr 等
+<br>
+11：打包：npm run build:ssr
+<br>
+12:用 vscode 打开打包后的文件夹 dist，然后终端输入：npm run serve:ssr
+<br>
+13：浏览器打开：http://localhost:4000 即可
